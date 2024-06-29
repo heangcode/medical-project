@@ -4,11 +4,11 @@ import ArrowRightIcon from "./icons/ArrowRightIcon";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="bg-[#F2F2F2]">
+    <section className="bg-[#F2F2F2] h-[640px] flex items-center">
       <Container>
-        <div className="container mx-auto flex items-center text-left space-x-10">
+        <div className="container mx-auto flex items-center justify-center text-left space-x-10">
           <img
-            src="medical-images.svg"
+            src="/medical-images.svg"
             alt="Medical Equipment"
             className="object-cover"
           />
@@ -28,7 +28,7 @@ const HeroSection: React.FC = () => {
               </p>
               <span>
                 Medicom is one of the major supplier of medical and Laboratory
-                Equipment throughout the kingdome.
+                Equipment throughout the kingdom.
               </span>
               <button className="mt-6 px-8 py-4 bg-[#008001] text-white rounded-full flex items-center justify-center space-x-2">
                 <span>Shop Now</span>

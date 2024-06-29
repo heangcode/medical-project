@@ -87,13 +87,35 @@ const data = {
   ],
   blogs: [
     {
-      title: "Blog Post 1",
       date: "18 Nov",
-      image: "/images/blog1.png",
+      image: "/blog-01.png",
       excerpt:
         "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
     },
-    // Add more blogs
+    {
+      date: "18 Nov",
+      image: "/blog-02.png",
+      excerpt:
+        "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+    },
+    {
+      date: "18 Nov",
+      image: "/blog-03.png",
+      excerpt:
+        "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+    },
+  ],
+  logos: [
+    { name: "steps", src: "/Vector.png", alt: "Steps Logo" },
+    { name: "mango", src: "/mango-1.png", alt: "Mango Logo" },
+    { name: "food", src: "/food.png", alt: "Food Logo" },
+    { name: "Group", src: "/Group.png", alt: "Group Logo" },
+    {
+      name: "book-off",
+      src: "bookoff-corporation-logo.png",
+      alt: "Book-Off Logo",
+    },
+    { name: "gseries", src: "/Group-1.png", alt: "G Series Logo" },
   ],
 };
 

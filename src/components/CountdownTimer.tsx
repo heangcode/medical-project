@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 
 interface CountdownTimerProps {
@@ -7,7 +9,7 @@ interface CountdownTimerProps {
 const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   const calculateTimeLeft = () => {
     const difference = +new Date(targetDate) - +new Date();
-    let timeLeft = {};
+    let timeLeft: { [key: string]: number } = {};
 
     if (difference > 0) {
       timeLeft = {
@@ -21,15 +23,19 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState<{ [key: string]: number }>({});
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeLeft(calculateTimeLeft());
+    setIsClient(true);
+
+    const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
-    return () => clearTimeout(timer);
-  });
+    return () => clearInterval(timer);
+  }, [targetDate]);
 
   const timerComponents: JSX.Element[] = [];
 
@@ -37,7 +43,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     timerComponents.push(
       <div className="flex items-center flex-col space-y-1" key={interval}>
         <span className="text-2xl font-semibold">
-          {(timeLeft as any)[interval]}
+          {isClient ? (timeLeft as any)[interval] : "00"}
         </span>
         <span className="text-xs font-light uppercase">{interval}</span>
       </div>

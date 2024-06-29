@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ShoppingBasketIcon from "./icons/ShoppingBasketIcon";
 
 interface ProductCardProps {
@@ -20,6 +20,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
   discount,
   productType,
 }) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleToggle = () => {
+    setIsSelected(!isSelected);
+  };
+
   const renderStars = (rating: number) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -51,7 +57,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <img
         src={image}
         alt={name}
-        className="mx-auto mb-4 w-[328.5px] h-[337.3px] object-contain"
+        className="mx-auto mb-4 w-[328.5px] h-[337.3px] object-cover"
       />
 
       <div className="flex items-center justify-between w-full">
@@ -73,7 +79,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
         </div>
 
-        <button className="text-gray-700 bg-[#F2F2F2] p-[16px] rounded-full flex items-center justify-center">
+        <button
+          onClick={handleToggle}
+          className={`p-[16px] rounded-full flex items-center justify-center ${
+            isSelected
+              ? "text-white bg-[#008001]"
+              : "text-gray-700 bg-[#F2F2F2]"
+          } hover:bg-[#008001] hover:text-white`}
+        >
           <ShoppingBasketIcon className="w-[30px] h-[30px]" />
         </button>
       </div>
