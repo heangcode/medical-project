@@ -62,7 +62,7 @@ const HomePage: React.FC = () => {
     <div className="bg-gradient-to-b from-white to-gray-100 w-full">
       <main className="w-full">
         <Header />
-        <div className="flex flex-col items-center space-y-[48px] w-full mb-10">
+        <div className="flex flex-col items-center space-y-[48px] w-full">
           <HeroSection />
           <FeaturesSection />
           <PopularCategories categories={categories} />
