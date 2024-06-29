@@ -42,7 +42,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   return (
-    <div className="p-4 border  relative h-full w-full">
+    <div className="p-4 border relative h-full w-full">
       {discount > 0 && (
         <div className="absolute top-2 left-2 bg-red-500 text-white h-[43.57px] w-[122.56px] flex items-center justify-center text-base font-bold px-2 py-1 rounded">
           Sale {discount}%
@@ -62,9 +62,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <h3 className="text-xl font-extrabold text-[#374151]">{name}</h3>
           <div className="flex items-center space-x-1">
             <span className="text-lg font-bold text-red-500">{price}</span>
-            <span className="text-sm line-through text-gray-500">
-              {originalPrice}
-            </span>
+            {discount > 0 && (
+              <span className="text-sm line-through text-gray-500">
+                {originalPrice}
+              </span>
+            )}
           </div>
           <div className="flex items-center justify-between mb-1">
             <span className="flex items-center">{renderStars(rating)}</span>

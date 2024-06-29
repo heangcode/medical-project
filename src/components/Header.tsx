@@ -8,7 +8,7 @@ import CallingIcon from "./icons/CallingIcon";
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md w-full">
       <Container className="py-[12px] border-b">
         <div className="h-[44px] bg-white w-full flex items-center justify-between">
           <div className="text-[#666666] flex items-center space-x-2">

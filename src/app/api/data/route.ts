@@ -26,7 +26,16 @@ const data = {
       originalPrice: "$20.99",
       image: "/products.svg",
       rating: 4.5,
-      discount: 50,
+      discount: 0,
+    },
+    {
+      productType: "HealthCare",
+      name: "Sarasoft AG",
+      price: "$14.99",
+      originalPrice: "$20.99",
+      image: "/products.svg",
+      rating: 4.5,
+      discount: 20,
     },
     {
       productType: "HealthCare",
@@ -44,7 +53,16 @@ const data = {
       originalPrice: "$20.99",
       image: "/products.svg",
       rating: 4.5,
-      discount: 50,
+      discount: 0,
+    },
+    {
+      productType: "HealthCare",
+      name: "Sarasoft AG",
+      price: "$14.99",
+      originalPrice: "$20.99",
+      image: "/products.svg",
+      rating: 4.5,
+      discount: 20,
     },
     {
       productType: "HealthCare",
@@ -62,26 +80,10 @@ const data = {
       originalPrice: "$20.99",
       image: "/products.svg",
       rating: 4.5,
-      discount: 50,
+      discount: 0,
     },
-    {
-      productType: "HealthCare",
-      name: "Sarasoft AG",
-      price: "$14.99",
-      originalPrice: "$20.99",
-      image: "/products.svg",
-      rating: 4.5,
-      discount: 50,
-    },
-    {
-      productType: "HealthCare",
-      name: "Sarasoft AG",
-      price: "$14.99",
-      originalPrice: "$20.99",
-      image: "/products.svg",
-      rating: 4.5,
-      discount: 50,
-    },
+
+    // Add more products as needed
   ],
   blogs: [
     {

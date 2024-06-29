@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import PopularCategories from "@/components/PopularCategories";
 import PopularProducts from "@/components/PopularProducts";
-import SaleOfTheMonth from "@/components/SaleOfTheMonth";
+import SaleOfTheMonthSection from "@/components/SaleOfTheMonthSection";
 import React, { useEffect, useState } from "react";
 
 interface Category {
@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
           <FeaturesSection />
           <PopularCategories categories={categories} />
           <PopularProducts products={products} />
-          <SaleOfTheMonth />
+          <SaleOfTheMonthSection />
           <DailyBlog blogs={blogs} />
         </div>
       </main>

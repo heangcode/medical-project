@@ -29,7 +29,7 @@ const PopularProducts: React.FC<PopularProductsProps> = ({ products }) => {
               <ArrowRightIcon />
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-[32px]">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-[32px] gap-4">
             {products.map((product, index) => (
               <ProductCard
                 key={index}
