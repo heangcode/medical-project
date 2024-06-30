@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Container from "./Container";
 import LocationIcon from "./icons/LocationIcon";
@@ -5,10 +7,22 @@ import SearchIcon from "./icons/SearchIcon";
 import FavouriteIcon from "./icons/FavouriteIcon";
 import ShoppingBasketIcon from "./icons/ShoppingBasketIcon";
 import CallingIcon from "./icons/CallingIcon";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header: React.FC = () => {
+  const pathname = usePathname();
+
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/shop", label: "Shop" },
+    { href: "/blog", label: "Blog" },
+    { href: "/about", label: "About Us" },
+    { href: "/contact", label: "Contact Us" },
+  ];
+
   return (
-    <header className="bg-white shadow-md w-full">
+    <header className="container mx-auto bg-white shadow-md w-full">
       <Container className="py-[12px] border-b">
         <div className="h-[44px] bg-white w-full flex items-center justify-between">
           <div className="text-[#666666] flex items-center space-x-2">
@@ -25,12 +39,12 @@ const Header: React.FC = () => {
                 <option value="kh">Kh</option>
               </select>
               <span>|</span>
-              <a href="#" className="text-gray-800">
+              <Link href="/signin" className="text-gray-800">
                 Sign In
-              </a>
-              <a href="#" className="text-gray-800">
+              </Link>
+              <Link href="/signup" className="text-gray-800">
                 Sign Up
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
@@ -39,9 +53,9 @@ const Header: React.FC = () => {
       <Container className="py-3">
         <div className="h-[85px] flex justify-between items-center">
           <div className="text-lg font-semibold">
-            <a href="#">
+            <Link href="/">
               <img src="logo.svg" alt="logo" className="w-[40px] h-[40px]" />
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center">
@@ -83,25 +97,21 @@ const Header: React.FC = () => {
         </div>
       </Container>
 
-      <div className=" bg-[#333333] h-[60px]  flex items-center justify-center">
+      <div className="bg-[#333333] h-[60px] flex items-center justify-center">
         <Container>
           <div className="flex items-center justify-between ">
             <div className="flex items-center space-x-10">
-              <a href="#" className="text-white">
-                Home
-              </a>
-              <a href="#" className="text-white">
-                Shop
-              </a>
-              <a href="#" className="text-white">
-                Blog
-              </a>
-              <a href="#" className="text-white">
-                About Us
-              </a>
-              <a href="#" className="text-white">
-                Contact Us
-              </a>
+              {links.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`text-white ${
+                    pathname === href ? "bg-green-500 px-3 py-2 rounded" : ""
+                  }`}
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
             <div className="flex items-center space-x-4">
               <CallingIcon className="w-[28px] h-[28px] text-white" />

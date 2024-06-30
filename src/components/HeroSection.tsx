@@ -8,7 +8,7 @@ const HeroSection: React.FC = () => {
       <Container>
         <div className="container mx-auto flex items-center justify-center text-left space-x-10">
           <img
-            src="/medical-images.svg"
+            src="/home/medical-images.svg"
             alt="Medical Equipment"
             className="object-cover"
           />

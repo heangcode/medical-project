@@ -9,7 +9,7 @@ import SmartPhoneIcon from "./icons/SmartPhoneIcon"; // Assuming you have this i
 
 const Footer: React.FC = () => {
   return (
-    <div>
+    <div className="w-full container mx-auto">
       <div className="h-[88px] bg-[#F7F7F7] w-full flex items-center justify-center">
         <Container>
           <div className="flex items-center justify-between w-full">

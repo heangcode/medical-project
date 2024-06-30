@@ -5,7 +5,7 @@ const DiscountCard: React.FC = () => {
   return (
     <div
       className="relative w-full bg-cover bg-center rounded-lg h-[584px]"
-      style={{ backgroundImage: `url('/discount.png')` }}
+      style={{ backgroundImage: `url('/home/discount.png')` }}
     >
       <div className="relative z-10 space-y-[20px] p-6 flex flex-col items-center text-center w-full">
         <p className="text-sm text-[#1A1A1A] capitalize tracking-[1px]">

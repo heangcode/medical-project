@@ -1,15 +1,11 @@
-"use client";
-
 import DailyBlog from "@/components/DailyBlog";
 import FeaturesSection from "@/components/FeaturesSection";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import Logos from "@/components/Logos";
 import PopularCategories from "@/components/PopularCategories";
 import PopularProducts from "@/components/PopularProducts";
 import SaleOfTheMonthSection from "@/components/SaleOfTheMonthSection";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 interface Category {
   name: string;
@@ -27,7 +23,6 @@ interface Product {
 }
 
 interface Blog {
-  title: string;
   date: string;
   image: string;
   excerpt: string;
@@ -39,29 +34,25 @@ interface Logo {
   alt: string;
 }
 
-const HomePage: React.FC = () => {
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [products, setProducts] = useState<Product[]>([]);
-  const [blogs, setBlogs] = useState<Blog[]>([]);
-  const [logos, setLogos] = useState<Logo[]>([]);
+interface HomePageProps {
+  categories: Category[];
+  products: Product[];
+  blogs: Blog[];
+  logos: Logo[];
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/api/data");
-      const data = await res.json();
-      setCategories(data.categories);
-      setProducts(data.products);
-      setBlogs(data.blogs);
-      setLogos(data.logos);
-    };
+async function fetchData() {
+  const res = await fetch("http://localhost:3000/api/data");
+  const data = await res.json();
+  return data;
+}
 
-    fetchData();
-  }, []);
+const HomePage: React.FC = async () => {
+  const { categories, products, blogs, logos } = await fetchData();
 
   return (
     <div className="bg-gradient-to-b from-white to-gray-100 w-full">
       <main className="w-full">
-        <Header />
         <div className="flex flex-col items-center space-y-[48px] w-full">
           <HeroSection />
           <FeaturesSection />
@@ -72,7 +63,6 @@ const HomePage: React.FC = () => {
           <Logos logos={logos} />
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

@@ -7,7 +7,7 @@ const SaleOfTheMonthCard: React.FC = () => {
     <div
       className="relative w-full bg-cover bg-center rounded-lg h-[584px]"
       style={{
-        backgroundImage: `url('/sale-of-the-month.png')`,
+        backgroundImage: `url('/home/sale-of-the-month.png')`,
         objectFit: "cover",
       }}
     >
