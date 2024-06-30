@@ -54,7 +54,7 @@ const Header: React.FC = () => {
         <div className="h-[85px] flex justify-between items-center">
           <div className="text-lg font-semibold">
             <Link href="/">
-              <img src="logo.svg" alt="logo" className="w-[40px] h-[40px]" />
+              <img src="/logo.svg" alt="logo" className="w-[40px] h-[40px]" />
             </Link>
           </div>
 

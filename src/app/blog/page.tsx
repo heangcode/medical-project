@@ -11,6 +11,7 @@ import FilterHorizontalIcon from "@/components/icons/FilterHorizontalIcon";
 import SearchIcon from "@/components/icons/SearchIcon";
 import Pagination from "@/components/Pagination";
 import React, { useState } from "react";
+import Link from "next/link";
 
 const blogData = [
   {
@@ -174,13 +175,14 @@ const Blog = () => {
           </div>
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
             {currentBlogs.map((blog, index) => (
-              <BlogCard
-                key={index}
-                title={blog.title}
-                date={blog.date}
-                image={blog.image}
-                excerpt={blog.excerpt}
-              />
+              <Link href={`/blog/${index}`} key={index}>
+                <BlogCard
+                  title={blog.title}
+                  date={blog.date}
+                  image={blog.image}
+                  excerpt={blog.excerpt}
+                />
+              </Link>
             ))}
           </div>
         </div>
